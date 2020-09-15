@@ -17,11 +17,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func AddAnimalToArray(_ sender: Any) {
-        var animal = animalTextField.text!
+        let animal = animalTextField.text!
         
         
         // MARK: - 1️⃣ emojiArray  الي  animal قم باضافه متغير
+        emojiArray.append(animal)
         
+            
         
         
         
@@ -37,10 +39,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             animalEmojiLabel.text! += label
         }
         /// **BONUS**: 🎁 قم بمسح مكونات المصفوفة بعد عرضها
-   
-    
+        if animal == "قطه" {
+            emojiArray.append("🐱")
+        }
+        else if animal == "ارنب" {
+            emojiArray.append("🐰")
+        }
+        else if animal == "دب" {
+            emojiArray.append("🐻")
+        }
+        else {
+            emojiArray.append("❓")
+        }
         
-        
+        emojiArray.removeAll()
         
         hidekeyboard()
     }
@@ -58,4 +70,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
         animalTextField.delegate = self
     }
 }
-
+    
